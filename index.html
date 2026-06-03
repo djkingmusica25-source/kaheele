@@ -687,7 +687,7 @@ footer{
     </div>
 
     <div class="player-box">
-      <audio id="audioPlayer" controls preload="auto" src="demo.mp3"></audio>
+      <audio id="audioPlayer" controls preload="auto" src="reggaeton.mp3"></audio>
     </div>
   </div>
 
@@ -770,19 +770,24 @@ footer{
     });
   });
 
-  /* JAVASCRIPT DE REPRODUCCIÓN OPTIMIZADO */
+  /* JAVASCRIPT DE REPRODUCCIÓN ACTUALIZADO CON TU NUEVO ARCHIVO */
   const player = document.getElementById("audioPlayer");
   const demoCard = document.getElementById("demoCard");
   const masterCard = document.getElementById("masterCard");
 
+  // Configura aquí el nombre exacto de tu segundo audio (el Máster) cuando lo subas
+  const archivoMaster = "master-final.wav"; 
+
   demoCard.addEventListener("click", () => {
     const currentTime = player.currentTime;
     const wasPlaying = !player.paused;
-    player.src = "demo.mp3";
+    
+    player.src = "reggaeton.mp3"; // Tu archivo renombrado
     player.load();
     player.currentTime = currentTime;
+    
     if (wasPlaying) {
-      player.play().catch(e => console.log("Audio listo para reproducir"));
+      player.play().catch(e => console.log("Audio listo"));
     }
     demoCard.classList.add("active-track");
     masterCard.classList.remove("active-track");
@@ -791,16 +796,17 @@ footer{
   masterCard.addEventListener("click", () => {
     const currentTime = player.currentTime;
     const wasPlaying = !player.paused;
-    player.src = "master-final.mp3";
+    
+    player.src = archivoMaster; // Busca el archivo del máster final
     player.load();
     player.currentTime = currentTime;
+    
     if (wasPlaying) {
-      player.play().catch(e => console.log("Audio listo para reproducir"));
+      player.play().catch(e => console.log("Audio listo"));
     }
     masterCard.classList.add("active-track");
     demoCard.classList.remove("active-track");
   });
-</script>
 
 </body>
 </html>
