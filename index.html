@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -53,15 +52,71 @@ body::before{
   z-index: 0;
 }
 
-.secure-label{
-  position:fixed;
-  top:18px;
-  right:18px;
-  display:inline-flex;
-  align-items:center;
-  gap:10px;
-  padding:12px 16px;
-  border-radius:999px;
+/* ========================================================
+   BARRA DE NAVEGACIÓN EN PURO GLASSMOPHISM
+   ======================================================== */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: rgba(12, 10, 20, 0.6);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  padding: 16px 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 1000;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.4);
+}
+
+.nav-brand {
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: #fff;
+}
+
+.nav-menu {
+  list-style: none;
+  display: flex;
+  align-items: center;
+}
+
+.nav-link {
+  color: #e7f7ff;
+  text-decoration: none;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  padding: 10px 20px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  transition: all 0.3s ease;
+}
+
+.nav-link:hover {
+  background: linear-gradient(90deg, #7b61ff, #ff7fd4);
+  color: #fff;
+  border-color: transparent;
+  box-shadow: 0 0 20px rgba(123, 97, 255, 0.4);
+  transform: translateY(-1px);
+}
+
+.secure-label {
+  position: fixed;
+  top: 80px; /* Ajustado hacia abajo para no encimarse con la barra de navegación */
+  right: 18px;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 16px;
+  border-radius: 999px;
   background: rgba(21, 19, 34, 0.85);
   border: 1px solid rgba(255,255,255,.1);
   backdrop-filter: blur(12px);
@@ -95,7 +150,7 @@ body::before{
   justify-content:center;
   flex-direction:column;
   text-align:center;
-  padding:40px 20px;
+  padding:120px 20px 40px; /* Incrementado el padding superior para balancear la barra fija */
   position:relative;
   z-index:1;
 }
@@ -492,6 +547,7 @@ footer{
   .form-grid{ grid-template-columns:1fr; }
   .input-group.full{ grid-column:auto; }
   .form-container, .comparison-container{ padding:40px 20px; border-radius:28px; }
+  .navbar{ padding: 14px 20px; }
 }
 
 @media(max-width:480px) {
@@ -504,6 +560,20 @@ footer{
 </head>
 
 <body>
+
+<!-- MENÚ DE NAVEGACIÓN SUPERIOR FIJO CON NOMBRE ACTUALIZADO -->
+<nav class="navbar">
+  <div class="nav-brand">Kaheele Record's Files</div>
+  <ul class="nav-menu">
+    <li>
+      <a href="https://portal-kaheele.vercel.app/" class="nav-link">
+        Portal de Artistas
+      </a>
+    </li>
+  </ul>
+</nav>
+
+<div class="secure-label"><span>✓</span> Secure System</div>
 
 <!-- HERO -->
 <section class="hero">
