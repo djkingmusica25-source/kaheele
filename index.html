@@ -108,39 +108,6 @@ body::before{
   transform: translateY(-1px);
 }
 
-.secure-label {
-  position: fixed;
-  top: 80px; /* Ajustado hacia abajo para no encimarse con la barra de navegación */
-  right: 18px;
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-  padding: 12px 16px;
-  border-radius: 999px;
-  background: rgba(21, 19, 34, 0.85);
-  border: 1px solid rgba(255,255,255,.1);
-  backdrop-filter: blur(12px);
-  color:#e7f7ff;
-  font-size:13px;
-  font-weight:700;
-  letter-spacing:.05em;
-  text-transform:uppercase;
-  box-shadow: 0 18px 50px rgba(0,0,0,.4);
-  z-index:20;
-}
-
-.secure-label span{
-  display:inline-flex;
-  width:18px;
-  height:18px;
-  border-radius:50%;
-  background: linear-gradient(135deg, #46c174 0%, #1ebc57 100%);
-  align-items:center;
-  justify-content:center;
-  color:#fff;
-  font-size:12px;
-}
-
 /* HERO */
 
 .hero{
@@ -150,7 +117,7 @@ body::before{
   justify-content:center;
   flex-direction:column;
   text-align:center;
-  padding:120px 20px 40px; /* Incrementado el padding superior para balancear la barra fija */
+  padding:110px 20px 40px; /* Balanceado el espacio superior con el navbar fijo */
   position:relative;
   z-index:1;
 }
@@ -561,7 +528,7 @@ footer{
 
 <body>
 
-<!-- MENÚ DE NAVEGACIÓN SUPERIOR FIJO CON NOMBRE ACTUALIZADO -->
+<!-- MENÚ DE NAVEGACIÓN SUPERIOR FIJO -->
 <nav class="navbar">
   <div class="nav-brand">Kaheele Record's Files</div>
   <ul class="nav-menu">
@@ -572,8 +539,6 @@ footer{
     </li>
   </ul>
 </nav>
-
-<div class="secure-label"><span>✓</span> Secure System</div>
 
 <!-- HERO -->
 <section class="hero">
